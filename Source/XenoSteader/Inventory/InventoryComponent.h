@@ -4,14 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "IInventoryConstraint.h"
-#include "Android/AndroidPlatformMath.h"
-#include "Android/AndroidPlatformMath.h"
-#include "Android/AndroidPlatformMath.h"
-#include "Android/AndroidPlatformMath.h"
-#include "Chaos/AABB.h"
-#include "Chaos/AABB.h"
-#include "Chaos/AABB.h"
-#include "Chaos/AABB.h"
 #include "Components/ActorComponent.h"
 #include "InventoryComponent.generated.h"
 
@@ -24,16 +16,6 @@ UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class XENOSTEADER_API UInventoryComponent : public UActorComponent
 {
 	GENERATED_BODY()
-
-public:	
-	// Sets default values for this component's properties
-	UInventoryComponent();
-	explicit UInventoryComponent(IInventoryConstraint InventoryConstraint);
-
-protected:
-	// Called when the game starts
-	virtual void BeginPlay() override;
-
 public:
 	/* Returns true if item can be inserted */
 	virtual bool InsertItem(IInventoryEntry* InventoryEntry) { return false; }

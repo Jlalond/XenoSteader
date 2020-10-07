@@ -10,8 +10,5 @@
 class XENOSTEADER_API IInventoryConstraint
 {
 public:
-	IInventoryConstraint() {}
-	~IInventoryConstraint() {}
-
 	virtual bool ItemPassesConstraint(class UInventoryComponent* ParentInventory, class IInventoryEntry* Entry) { return true; }
 };
