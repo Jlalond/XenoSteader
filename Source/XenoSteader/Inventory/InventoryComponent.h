@@ -11,7 +11,7 @@ class IInventoryEntry;
 
 /* A system that contains items, implementations express behavior upon this,
  * Has a constraint, or an item that determines rules, and exposes an iterator of the whole set */
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=(Custom) )
 class XENOSTEADER_API UInventoryComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -33,9 +33,8 @@ public:
 	virtual TArray<UInventoryComponent*>::TConstIterator GetSubContainers() { return TArray<UInventoryComponent*>().CreateConstIterator(); }
 
 protected:
-	virtual bool CanBeInserted(IInventoryEntry* InventoryEntry);
+	virtual bool CanBeInserted(IInventoryEntry* InventoryEntry) { return false; }
 
 private:
-	UPROPERTY()
 	TArray<UInventoryComponent*> SubContainers;
 };

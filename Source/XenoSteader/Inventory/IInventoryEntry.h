@@ -10,4 +10,6 @@ class XENOSTEADER_API IInventoryEntry
 {
 public:
     FString Name;
+    // virtual destructor to mark this as polymorphic type
+    virtual ~IInventoryEntry() = default; 
 };

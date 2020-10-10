@@ -6,6 +6,7 @@ public class XenoSteader : ModuleRules
 {
 	public XenoSteader(ReadOnlyTargetRules Target) : base(Target)
 	{
+		bUseRTTI = true;
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });

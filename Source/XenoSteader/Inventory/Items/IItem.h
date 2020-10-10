@@ -11,6 +11,6 @@
 class XENOSTEADER_API IItem : public IInventoryEntry
 {
 public:
-	int GetXSize();
-    int GetYSize();
+	int GetXSize() { return -1; }
+    int GetYSize() { return -1; }
 };

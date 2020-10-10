@@ -3,12 +3,13 @@
 
 #include "UItemGridInventory.h"
 #include "XenoSteader/Inventory/IInventoryEntry.h"
-
 #include <tuple>
 #include <vector>
-
 #include "IItem.h"
 
+UItemGridInventory::UItemGridInventory(const FObjectInitializer& FObjectInitializer) : Super(FObjectInitializer)
+{
+}
 
 UItemGridInventory::UItemGridInventory(int XSize, int YSize)
 {
