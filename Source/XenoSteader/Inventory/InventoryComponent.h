@@ -34,7 +34,5 @@ public:
 
 protected:
 	virtual bool CanBeInserted(IInventoryEntry* InventoryEntry) { return false; }
-
-private:
 	TArray<UInventoryComponent*> SubContainers;
 };
