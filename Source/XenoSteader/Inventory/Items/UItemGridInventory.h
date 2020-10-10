@@ -4,24 +4,23 @@
 
 #include "CoreMinimal.h"
 #include "XenoSteader/Inventory/InventoryComponent.h"
+#include <vector>
 
-class IInventoryEntry;
 /**
  * Inventory to fit items in a gird format
  */
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class XENOSTEADER_API UItemInventory : public UInventoryComponent
+class XENOSTEADER_API UItemGridInventory : public UInventoryComponent
 {
+	GENERATED_BODY()
 public:
 	/* Dimensions for grid */
-	UItemInventory(int XSize, int YSize);
-	~UItemInventory();
+	UItemGridInventory(int XSize, int YSize);
+	~UItemGridInventory();
 
 	virtual bool InsertItem(IInventoryEntry* InventoryEntry) override;
 
 protected:
-	IInventoryEntry** ItemMatrix;
-
-private:
-	void InsertIntoGrid(IInventoryEntry* InventoryEntry);
+	std::vector<std::vector<IInventoryEntry*>> ItemMatrix;
+	virtual bool CanBeInserted(IInventoryEntry* InventoryEntry) override;
 };

@@ -3,8 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include <vector>
 
 
 class XENOSTEADER_API IInventoryEntry
 {
+public:
+    FString Name;
 };

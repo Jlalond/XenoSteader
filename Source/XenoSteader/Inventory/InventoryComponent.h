@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "IInventoryConstraint.h"
 #include "Components/ActorComponent.h"
 #include "InventoryComponent.generated.h"
 
@@ -33,8 +32,10 @@ public:
 
 	virtual TArray<UInventoryComponent*>::TConstIterator GetSubContainers() { return TArray<UInventoryComponent*>().CreateConstIterator(); }
 
+protected:
+	virtual bool CanBeInserted(IInventoryEntry* InventoryEntry);
+
 private:
 	UPROPERTY()
 	TArray<UInventoryComponent*> SubContainers;
-	IInventoryConstraint InventoryConstraint;
 };

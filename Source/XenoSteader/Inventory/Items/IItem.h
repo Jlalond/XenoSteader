@@ -3,17 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-
 #include "XenoSteader/Inventory/IInventoryEntry.h"
 
 /**
  * 
  */
-class XENOSTEADER_API Item : public IInventoryEntry
+class XENOSTEADER_API IItem : public IInventoryEntry
 {
 public:
-	Item();
-	~Item();
-
-	FName ItemName;
+	int GetXSize();
+    int GetYSize();
 };
